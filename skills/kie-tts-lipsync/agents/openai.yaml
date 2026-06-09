@@ -1,0 +1,3 @@
+display_name: KIE TTS Lip-sync
+short_description: Cost-gated ElevenLabs/Fish TTS and KIE Infinitalk lip-sync media workflow for CapCut Shorts.
+default_prompt: Use the KIE TTS Lip-sync skill to create or prepare narration audio and talking-character MP4 assets, starting with env-check and dry-run cost estimates before any paid API call.

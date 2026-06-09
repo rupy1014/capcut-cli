@@ -1,3 +1,10 @@
 node_modules/
 dist/
 *.bak
+
+# 로컬 전용 (스크래치/생성물 — upstream과 무관, 버전관리 안 함)
+.DS_Store
+temp/
+outputs/
+images/
+.omj/
