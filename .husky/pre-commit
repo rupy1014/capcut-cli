@@ -15,3 +15,18 @@ npx --no-install lint-staged
 #    the rebuild, test:fast runs against a stale build and can pass-or-fail on
 #    code that isn't what's being committed.
 npm test --silent 2>&1 | tail -20
+
+# 3. 문서 참조 게이트 (omj) — 없는 문서를 가리키는 링크를 막고 색인을 같은 커밋에 넣는다.
+#    도구가 없으면 조용히 통과한다.
+DOCS_SH=""
+for c in "$HOME/.claude/scripts/omj-docs.sh" .omj/_tools/omj-docs.sh; do
+  [ -x "$c" ] && { DOCS_SH="$c"; break; }
+done
+if [ -n "$DOCS_SH" ] && [ -d docs ] && git diff --cached --name-only | grep -qE '^docs/.*\.md$'; then
+  if ! OUT="$(sh -c "\"$DOCS_SH\" links docs" 2>&1)"; then
+    echo "[pre-commit] 문서 링크가 없는 문서를 가리킵니다" >&2
+    printf '%s\n' "$OUT" | grep '\[error\]' >&2
+    exit 1
+  fi
+  "$DOCS_SH" index docs --write >/dev/null 2>&1 && git add docs/INDEX.md 2>/dev/null || true
+fi
