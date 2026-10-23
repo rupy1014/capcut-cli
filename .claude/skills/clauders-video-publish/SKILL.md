@@ -117,6 +117,9 @@ YT_PROFILE=~/.cache/slashpage-playwright/profile-yt-openhow node scripts/yt-uplo
   --file clip.mp4 --title "..." --desc "..." --schedule 2026-10-21T18:00 --expect-channel 오픈하우 --publish
 ```
 
+- **쇼츠 예약 정책 (2026-10-23 확정)**: 쇼츠는 **자기 롱폼이 공개되는 다음 날부터 하루 1개씩 매일 18:00**. 다른 회차 쇼츠와
+  날짜가 겹쳐도 미루지 않는다 — 하루에 여러 개가 올라가도 된다(사용자: "롱폼을 자주 올리면 하루에 여러개 쇼츠가 올라가긴
+  하겠지만 정책을 그렇게 잡자"). 이전 회차 쇼츠가 끝나는 날 뒤로 이어 붙이지 마라(1021 에서 그렇게 했다가 다시 잡았다).
 - `--schedule` 은 계정 시간대 기준(오픈하우 = KST). 날짜·시간 칸 형식은 UI 언어를 따르므로 **칸에 든 값의 모양을 읽어 맞춘다**(한국어 `2026. 10. 21.` / `오후 6:00`). 넣은 뒤 되읽어서 다르면 저장하지 않는다.
 - `--expect-channel` 이 Studio 채널명과 다르면 파일을 올리기 전에 멈춘다. 계정마다 프로필 디렉터리를 따로 둔다.
 - 일괄 예약 예: `outputs/1019-shorts/upload.sh` + `schedule.json` (이미 올린 건 `uploaded.log` 로 건너뜀).

@@ -442,6 +442,11 @@ YouTube 는 -14 보다 큰 것만 줄이고 작은 것은 안 올린다 — 쇼�
 리미터로 크레스트를 줄인다(리미터만으로는 -12~-13 에서 막힌다). 체인·makeup 탐색은
 `docs/agent-rules/capcut-shorts-workflow.md` §5b.
 
+**CapCut 에서 바로 export 한 파일도 같은 기준이다.** draft 에는 게인이 없어 직녹음 레벨이 그대로 나온다 —
+1021 은 -34.8 LUFS 로 업로드됐다(사용자: "소리 줄이거나 그러지 말라고"). 어떤 경로로 만든 MP4 든 **업로드 전에
+`ebur128` 로 재고**, 롱폼 -14 ±0.5 / 쇼츠 -11 ±0.3 에서 벗어나면 보정한 뒤 올린다. 절차:
+`docs/agent-rules/capcut-draft-editing-workflow.md` §2.8. 보고에 LUFS·TP 를 숫자로 적는다.
+
 ## 디자인 시스템
 
 openhow.io 를 쓸 때 값 출처는 `~/sideProjects/openhow/core` —
